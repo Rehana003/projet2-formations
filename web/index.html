@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscription aux formations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Centre de formation</h1><p>Gestion des formations et des inscriptions</p></header>
+  <main>
+    <section class="card">
+      <h2>Ajouter une formation</h2>
+      <form id="form-formation">
+        <input name="titre" placeholder="Titre" required>
+        <input name="dateDebut" type="date" required>
+        <input name="places" type="number" min="1" placeholder="Nombre de places" required>
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Inscrire un étudiant</h2>
+      <form id="form-inscription">
+        <select name="formationId" id="select-formation" required></select>
+        <input name="nom" placeholder="Nom" required>
+        <input name="email" type="email" placeholder="E-mail" required>
+        <button type="submit">Inscrire</button>
+      </form>
+    </section>
+
+    <div id="message" class="message" hidden></div>
+
+    <section class="card">
+      <h2>Formations</h2>
+      <table>
+        <thead><tr><th>Titre</th><th>Début</th><th>Places</th><th>Inscrits</th><th>Restantes</th><th></th></tr></thead>
+        <tbody id="liste-formations"></tbody>
+      </table>
+    </section>
+
+    <section class="card" id="bloc-inscrits" hidden>
+      <h2 id="titre-inscrits"></h2>
+      <ul id="liste-inscrits"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
